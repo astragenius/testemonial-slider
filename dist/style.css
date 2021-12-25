@@ -1,0 +1,315 @@
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: Inter, sans-serif;
+  
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+ 
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Unitily Classes */
+
+/* Font-size */
+.fs-500 {font-size: 2rem;}
+.fs-400 {font-size: 1.5rem;}
+.fs-normal {font-size: 1rem;};
+
+/* Font-weight */
+.fw-300 {font-weight: 300;}
+.fw-500 {font-weight: 500;}
+.fw-700 {font-weight: 700;}
+
+/* font-color */
+.fc-dark-blue {color: hsl(240, 38%, 20%);}
+.fc-grey-blue {color: hsl(240, 18%, 77%);}
+.box-shadow { 
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.container {
+  max-width: 90rem;
+  padding: 2em ;
+  min-height: 100vh;
+}
+
+.container--bg {
+  background-image: url(/dist/images/pattern-curve.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  
+}
+
+.slider {
+
+  background-image: url(/dist/images/pattern-bg.svg);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 2em;
+}
+
+.slider__container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.slider__control {
+
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 90%;
+  left: 35%;
+  width: 80px;
+  background-color: #ffff;
+  border-radius: 10em;
+  
+}
+
+.slider__img {
+  border-radius: 5px;
+}
+
+.slider__control button {
+  
+  display: flex;
+  padding: 0.5em 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.text__container {
+
+  background-image: url(/dist/images/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 60px;
+  
+}
+.text__content {
+  padding: 1.5em 0; 
+}
+
+blockquote {
+  font-size: clamp(1.125rem, 0.4194rem + 3.0108vw, 2rem);
+  text-align: center;
+}
+.footer {
+  font-size: clamp(0.8rem, -0.1677rem + 4.1290vw, 1.25rem);
+  margin-top: 1em;
+  text-align: center;
+}
+.footer__name {font-weight: bold; }
+.footer__job {color: hsl(240, 18%, 77%); }
+
+
+
+/* Desktop Media queries */
+
+@media (min-width: 1250px) {
+
+    .container {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .container--bg {
+      background-size: auto;
+    }
+
+    .slider {
+      flex: 1;
+    }
+
+    .text__container {
+      flex: 1;
+      background-size: 120px;
+
+    }
+    blockquote {
+      text-align: left;
+    }
+
+    .slider__control {
+      width :112px;
+    }
+
+    .slider__control button {
+
+      padding: 1em 1em 1em 1em;
+    }
+
+    .footer {
+      display: flex;
+    }
+    .footer__name {
+      margin-right: 1em;
+    }
+
+}
+
+
+
+/* Animation IMG and TEXT */
+
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+.slide-in {
+  -webkit-animation-name: slide-in;
+          animation-name: slide-in;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes slide-in {
+  
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-in {
+  
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.pop-in {
+  -webkit-animation-name: pop-in;
+          animation-name: pop-in;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
